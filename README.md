@@ -17,14 +17,11 @@
 - Interactive Dashboard
 
 ## Dataset
-Dataset Name:
-NVIDIA Historical Stock Dataset
+Dataset Name: NVIDIA Historical Stock Dataset
 
-Total Records:
-2626
+Total Records:2626
 
-Total Features:
-8
+Total Features:8
 
 Features:
 1. Date
@@ -35,6 +32,12 @@ Features:
 6. Adj Close
 7. Volume
 8. Ingested_at_utc
+
+The dataset contains 2626 records.
+After train-test split:
+
+Training records: 2100
+Testing records: 526
 
 Downloaded from Kaggle and used for training Random Forest and LSTM models.
 
