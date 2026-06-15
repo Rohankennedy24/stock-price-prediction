@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Stock Intelligence Platform</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>AI-Powered Stock Intelligence Platform</h1>
+
+<p>
+Random Forest + LSTM Ensemble with News Sentiment Analytics
+</p>
+
+</div>
+
+<div class="dashboard">
+
+<div class="card tooltip">
+<h3>Current Price</h3>
+<h2>${{ current }}</h2>
+<span class="tip">Latest stock closing price</span>
+</div>
+
+<div class="card tooltip">
+<h3>RF Prediction</h3>
+<h2>${{ rf }}</h2>
+<span class="tip">Random Forest output</span>
+</div>
+
+<div class="card tooltip">
+<h3>LSTM Prediction</h3>
+<h2>${{ lstm }}</h2>
+<span class="tip">LSTM deep learning prediction</span>
+</div>
+
+<div class="card tooltip">
+<h3>Ensemble Prediction</h3>
+<h2>${{ ensemble }}</h2>
+<span class="tip">RF + LSTM average prediction</span>
+</div>
+
+<div class="card tooltip">
+<h3>Market Sentiment</h3>
+<h2>{{ sentiment }}</h2>
+<span class="tip">News sentiment analysis result</span>
+</div>
+
+<div class="card tooltip">
+<h3>Confidence Score</h3>
+<h2>{{ confidence }}%</h2>
+
+<div class="progress">
+<div class="progress-fill"
+style="width: {{ confidence }}%;">
+</div>
+</div>
+
+<span class="tip">Prediction confidence</span>
+</div>
+
+<div class="card tooltip">
+<h3>Risk Level</h3>
+
+<h2 class="
+{% if risk=='LOW' %}
+green
+{% elif risk=='MEDIUM' %}
+yellow
+{% else %}
+red
+{% endif %}
+">
+{{ risk }}
+</h2>
+
+<span class="tip">Market volatility risk</span>
+
+</div>
+
+<div class="card tooltip recommendation">
+
+<h3>Recommendation</h3>
+
+<h1 class="
+{% if recommendation=='BUY' %}
+green
+{% elif recommendation=='SELL' %}
+red
+{% else %}
+yellow
+{% endif %}
+">
+{{ recommendation }}
+</h1>
+
+<span class="tip">
+AI investment recommendation
+</span>
+
+</div>
+
+</div>
+
+<div class="chart-container">
+
+<div class="chart-card">
+
+<h2>Price Analysis</h2>
+
+<canvas id="priceChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h2>Market Analytics</h2>
+
+<canvas id="sentimentChart"></canvas>
+
+</div>
+
+</div>
+
+<script>
+
+const labels =
+{{ chart_labels | tojson }};
+
+const values =
+{{ chart_values | tojson }};
+
+new Chart(
+document.getElementById('priceChart'),
+{
+type:'line',
+data:{
+labels:labels,
+datasets:[{
+label:'Stock Values',
+data:values,
+borderWidth:4,
+tension:0.4
+}]
+},
+options:{
+responsive:true,
+plugins:{
+tooltip:{
+enabled:true
+}
+}
+}
+}
+);
+
+new Chart(
+document.getElementById('sentimentChart'),
+{
+type:'doughnut',
+data:{
+labels:[
+'Positive',
+'Negative',
+'Neutral'
+],
+datasets:[{
+data:[
+1008,
+746,
+1326
+]
+}]
+},
+options:{
+responsive:true
+}
+}
+);
+
+</script>
+
+</body>
+
+</html>
