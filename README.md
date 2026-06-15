@@ -35,7 +35,7 @@ Features:
 
 The dataset contains 2626 records.
 
-After train-test split:
+*After train-test split:*
 
 Training records: 2100
 
