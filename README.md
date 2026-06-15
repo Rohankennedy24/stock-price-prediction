@@ -17,7 +17,20 @@
 - Interactive Dashboard
 
 ## Dataset
-NVIDIA Historical Stock Dataset (Kaggle)
+Dataset Name: NVIDIA Historical Stock Dataset
+Source: Kaggle
+Records: 2626
+
+Columns:
+1. Date
+2. Open
+3. High
+4. Low
+5. Close
+6. Adj Close
+7. Volume
+
+Downloaded from Kaggle and used for training Random Forest and LSTM models.
 
 ## Author
 Rohan Kennedy
