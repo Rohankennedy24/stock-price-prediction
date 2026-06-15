@@ -34,9 +34,11 @@ Features:
 8. Ingested_at_utc
 
 The dataset contains 2626 records.
+
 After train-test split:
 
 Training records: 2100
+
 Testing records: 526
 
 Downloaded from Kaggle and used for training Random Forest and LSTM models.
