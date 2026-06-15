@@ -17,13 +17,16 @@
 - Interactive Dashboard
 
 ## Dataset
-Dataset Name: NVIDIA Historical Stock Dataset
+Dataset Name:
+NVIDIA Historical Stock Dataset
 
-Source: Kaggle
+Total Records:
+2626
 
-Records: 2626
+Total Features:
+8
 
-Columns:
+Features:
 1. Date
 2. Open
 3. High
@@ -31,6 +34,7 @@ Columns:
 5. Close
 6. Adj Close
 7. Volume
+8. Ingested_at_utc
 
 Downloaded from Kaggle and used for training Random Forest and LSTM models.
 
