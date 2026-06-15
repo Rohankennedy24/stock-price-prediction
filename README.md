@@ -18,7 +18,9 @@
 
 ## Dataset
 Dataset Name: NVIDIA Historical Stock Dataset
+
 Source: Kaggle
+
 Records: 2626
 
 Columns:
